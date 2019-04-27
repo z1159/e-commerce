@@ -1,0 +1,9 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: provider-hello #服务的名字
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ #链接注册中心的地址
