@@ -84,6 +84,23 @@
 			<artifactId>shop-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.spring4all</groupId>
+			<artifactId>swagger-spring-boot-starter</artifactId>
+			<version>1.9.0.RELEASE</version>
+			<!--排除自带 UI 依赖-->
+			<exclusions>
+				<exclusion>
+					<artifactId>springfox-swagger-ui</artifactId>
+					<groupId>io.springfox</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>swagger-bootstrap-ui</artifactId>
+			<version>1.9.2</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
