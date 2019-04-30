@@ -1,22 +1,27 @@
 package com.mr.shop;
 
+
+import org.apache.solr.client.solrj.beans.Field;
+
 public class Commodity {
+    @Field("id")
     private Integer commId;
-
+    @Field("commt_id")
     private Integer commtId;
-
+    @Field("img_id")
     private Integer imgId;
-
+    @Field("comm_parameter")
     private String commParameter;
-
+    @Field("comm_moneyy")
     private Double commMoneyy;
-
+    @Field("comm_moneyc")
     private Double commMoneyc;
-
+    @Field("comm_title")
     private String commTitle;
 
     private Integer commMany;
 
+    @Field("commd_miaoshu")
     private String commdMiaoshu;
 
     public Integer getCommId() {
