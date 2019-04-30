@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CommentListController {
 
     /**
-     * 进入发表品论页面url:localhost:8765/CommentListController/goToCommentList
+     * 进入发表评论页面url:localhost:8765/CommentListController/goToCommentList
      * @return
      */
     @GetMapping("goToCommentList")
