@@ -34,8 +34,11 @@ public class IndexController {
      * @return
      */
     @GetMapping("queryCommtype")
-    public String queryCommtype(){
+    public ModelAndView queryCommtype(){
        List<CommodityType> listCommt=indexService.queryCommtype();
-       return "德玛西亚";
+        ModelAndView modelandView = new ModelAndView();
+        modelandView.setViewName("dongtaidhtest");
+        modelandView.addObject("listCommt",listCommt);
+       return modelandView;
     }
 }
