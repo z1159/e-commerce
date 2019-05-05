@@ -23,6 +23,8 @@ public class User {
 
     private String userMibaoc;
 
+    private Integer userState;
+
     public Integer getUserId() {
         return userId;
     }
@@ -101,5 +103,13 @@ public class User {
 
     public void setUserMibaoc(String userMibaoc) {
         this.userMibaoc = userMibaoc == null ? null : userMibaoc.trim();
+    }
+
+    public Integer getUserState() {
+        return userState;
+    }
+
+    public void setUserState(Integer userState) {
+        this.userState = userState;
     }
 }
