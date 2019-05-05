@@ -30,7 +30,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapperlocations: classpath:mapper/*Mapper.xml
 
 
 
