@@ -2,7 +2,7 @@ package com.mr.shop;
 
 import java.util.Date;
 
-//评价管理实体
+//评价管理实体类
 public class Evaluates {
     //评价id
     private Integer evaluatesId;
