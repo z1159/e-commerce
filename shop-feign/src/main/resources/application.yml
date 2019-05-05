@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: consumer-feign
+  main:
+    allow-bean-definition-overriding: true
 eureka:
   client:
     serviceUrl:

@@ -3,7 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/shop-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-client" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/shop-client/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shop-feign" charset="UTF-8" />
   </component>

@@ -5,8 +5,8 @@ spring:
     name: provider-hello
   datasource:
         url: jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=UTF-8
-        username: root
-        password: root
+        username: mr_zry
+        password: 123
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
@@ -44,4 +44,6 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params:
+
+
 
