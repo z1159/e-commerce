@@ -1,6 +1,8 @@
 server:
   port: 8765
 spring:
+  main:
+      allow-bean-definition-overriding: true
   application:
     name: consumer-feign
   main:
