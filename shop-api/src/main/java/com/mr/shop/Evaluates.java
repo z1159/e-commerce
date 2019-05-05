@@ -2,19 +2,27 @@ package com.mr.shop;
 
 import java.util.Date;
 
+//评价管理实体类
 public class Evaluates {
+    //评价id
     private Integer evaluatesId;
 
+    //用户编号
     private Integer userId;
 
+    //商品id
     private Integer commId;
 
+    //图片id
     private Integer imgId;
 
+    //评价内容
     private String evaluatesContent;
 
+    //评价类型（好评，中评，差评
     private Integer evaluatesType;
 
+    //评价时间
     private Date evaltTime;
 
     public Integer getEvaluatesId() {
