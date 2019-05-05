@@ -21,4 +21,5 @@ public class IndexController {
     public List<CommodityType> queryCommtype(){
        return  indexService.queryCommtype();
     }
+
 }
