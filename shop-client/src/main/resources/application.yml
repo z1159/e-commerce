@@ -23,7 +23,9 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
-
+  data:
+    solr:
+      host: http://localhost:8088/solr
 eureka:
   client:
     serviceUrl:
