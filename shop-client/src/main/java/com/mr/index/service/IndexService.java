@@ -10,6 +10,7 @@ import java.util.Map;
 /**
  * Created by asus on 2019/4/29.
  */
+
 public interface IndexService {
     List<CommodityType> queryCommtype();
 
