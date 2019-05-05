@@ -31,6 +31,9 @@ eureka:
 
 mybatis:
   mapperlocations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.mr.shop
+  configuration:
+    map-underscore-to-camel-case: true
 
 
 
@@ -39,3 +42,4 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params:
+
