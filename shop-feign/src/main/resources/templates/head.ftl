@@ -5,6 +5,7 @@
   <title>$Title$</title>
 </head>
 <body>
+
 <div class="hmtop">
     <!--顶部导航条 -->
     <div class="am-container header">
@@ -42,13 +43,23 @@
         <div class="search-bar pr">
             <a name="index_none_header_sysc" href="#"></a>
             <form>
-                <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-                <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
+                <input id="commTitle" name="commTitle" type="text" placeholder="搜索" autocomplete="off">
+                <input type="hidden" id="page" name="page" value="1"/>
+                <input type="hidden" id="size" name="size" value="100"/>
+                <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="button" onclick="seacherfun()">
             </form>
         </div>
     </div>
 
     <div class="clear"></div>
 </div>
+<script>
+    function seacherfun() {
+        var commTitle=$("#commTitle").val();
+        var page=$("#page").val();
+        var size=$("#size").val();
+        location.href="/indexController/solrQueryCommodity/"+commTitle+"/"+page+"/"+size;
+    }
+</script>
 </body>
 </html>

@@ -51,7 +51,7 @@
 							<ul class="select">
 								<p class="title font-normal">
 									<span class="fl">松子</span>
-									<span class="total fl">搜索到<strong class="num">997</strong>件相关商品</span>
+									<span class="total fl">搜索到<strong class="num">${goodboy["count"]}</strong>件相关商品</span>
 								</p>
 							</ul>
 							<div class="clear"></div>
@@ -76,7 +76,7 @@
                                             <li>
                                                 <div class="i-pic limit">
 
-                                                    <img src="/images/imgsearch1.jpg" />
+                                                    <img src="/images/quanlver.jpg" />
                                                     <p class="title fl">${listcom.commTitle}</p>
                                                     <p class="price fl">
                                                         <b>¥</b>
