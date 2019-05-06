@@ -4,11 +4,13 @@ import com.mr.index.service.IndexService;
 import com.mr.shop.CommodityType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -41,4 +43,12 @@ public class IndexController {
         modelandView.addObject("listCommt",listCommt);
        return modelandView;
     }
+/*    @GetMapping("solrQueryCommodity/{commTitle}/{page}/{size}")
+    public ModelAndView solrQueryCommodity(@PathVariable String commTitle, @PathVariable Integer page, @PathVariable Integer size){
+      Map<String,Object> map= indexService.solrQueryCommodity(commTitle,page,size);
+      ModelAndView model = new ModelAndView();
+      model.setViewName("/zcf/test");
+      model.addObject("goodboy",map);
+      return model;
+    }*/
 }
