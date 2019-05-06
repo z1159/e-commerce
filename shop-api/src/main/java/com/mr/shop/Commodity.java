@@ -42,12 +42,12 @@ public class Commodity {
     //图片地址
     private String imgUrl;
 
-
+    private Integer commtFater;
     //所属分类
     private Integer commtType;
 
     //所属品牌商
-    private Integer commAgent;
+    private Integer commtAgent;
 
 
 
