@@ -23,6 +23,9 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+        druid:
+          test-on-borrow: true
+          validation-query: SELECT 1
   data:
     solr:
       host: http://localhost:8088/solr
