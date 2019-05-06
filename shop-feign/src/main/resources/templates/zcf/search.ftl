@@ -7,60 +7,20 @@
 
 		<title>搜索页面</title>
 
-		<link href="${re.contextPath}/static/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
-		<link href="${re.contextPath}/static/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
+		<link href="/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
+		<link href="/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
 
-		<link href="${re.contextPath}/static/basic/css/demo.css" rel="stylesheet" type="text/css" />
+		<link href="/basic/css/demo.css" rel="stylesheet" type="text/css" />
 
-		<link href="${re.contextPath}/static/css/seastyle.css" rel="stylesheet" type="text/css" />
+		<link href="/css/seastyle.css" rel="stylesheet" type="text/css" />
 
-		<script type="text/javascript" src="${re.contextPath}/static/basic/js/jquery-1.7.min.js"></script>
-		<script type="text/javascript" src="${re.contextPath}/static/js/script.js"></script>
+		<script type="text/javascript" src="/basic/js/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
 	</head>
 
 	<body>
 
-		<!--顶部导航条 -->
-		<div class="am-container header">
-			<ul class="message-l">
-				<div class="topMessage">
-					<div class="menu-hd">
-						<a href="#" target="_top" class="h">亲，请登录</a>
-						<a href="#" target="_top">免费注册</a>
-					</div>
-				</div>
-			</ul>
-			<ul class="message-r">
-				<div class="topMessage home">
-					<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
-				</div>
-				<div class="topMessage my-shangcheng">
-					<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
-				</div>
-				<div class="topMessage mini-cart">
-					<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
-				</div>
-				<div class="topMessage favorite">
-					<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
-			</ul>
-			</div>
-
-			<!--悬浮搜索框-->
-
-			<div class="nav white">
-				<div class="logo"><img src="${re.contextPath}/static/images/logo.png" /></div>
-				<div class="logoBig">
-					<li><img src="${re.contextPath}/static/images/logobig.png" /></li>
-				</div>
-
-				<div class="search-bar pr">
-					<a name="index_none_header_sysc" href="#"></a>
-					<form>
-						<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-						<input id="ai-topsearch" class="submit am-btn"  value="搜索" index="1" type="submit">
-					</form>
-				</div>
-			</div>
+	<#include "../head.ftl">
 
 			<div class="clear"></div>
 			<b class="line"></b>
@@ -106,173 +66,36 @@
 								<div class="clear"></div>
 
 								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
-									<li>
-										<div class="i-pic limit">
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="${re.contextPath}/static/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
+
+
+								<#list goodboy?keys as key >
+
+									<#if key=="commList">
+										<#list goodboy[key] as listcom>
+
+                                            <li>
+                                                <div class="i-pic limit">
+
+                                                    <img src="/images/imgsearch1.jpg" />
+                                                    <p class="title fl">${listcom.commTitle}</p>
+                                                    <p class="price fl">
+                                                        <b>¥</b>
+                                                        <strong>${listcom.commMoneyc}</strong>
+                                                    </p>
+                                                    <p class="number fl">
+                                                        销量<span>1110</span>
+                                                    </p>
+                                                </div>
+                                            </li>
+
+
+										</#list>
+									</#if>
+								</#list>
+
+
+
+
 								</ul>
 							</div>
 							<div class="search-side">
@@ -283,7 +106,7 @@
 
 								<li>
 									<div class="i-pic check">
-										<img src="${re.contextPath}/static/images/cp.jpg" />
+										<img src="/images/cp.jpg" />
 										<p class="check-title">萨拉米 1+1小鸡腿</p>
 										<p class="price fl">
 											<b>¥</b>
@@ -296,7 +119,7 @@
 								</li>
 								<li>
 									<div class="i-pic check">
-										<img src="${re.contextPath}/static/images/cp2.jpg" />
+										<img src="/images/cp2.jpg" />
 										<p class="check-title">ZEK 原味海苔</p>
 										<p class="price fl">
 											<b>¥</b>
@@ -309,7 +132,7 @@
 								</li>
 								<li>
 									<div class="i-pic check">
-										<img src="${re.contextPath}/static/images/cp.jpg" />
+										<img src="/images/cp.jpg" />
 										<p class="check-title">萨拉米 1+1小鸡腿</p>
 										<p class="price fl">
 											<b>¥</b>
@@ -380,7 +203,7 @@
 						</a>
 						<div class="ibar_login_box status_login">
 							<div class="avatar_box">
-								<p class="avatar_imgbox"><img src="${re.contextPath}/static/images/no-img_mid_.jpg" /></p>
+								<p class="avatar_imgbox"><img src="/images/no-img_mid_.jpg" /></p>
 								<ul class="user_info">
 									<li>用户名：sl1903</li>
 									<li>级&nbsp;别：普通会员</li>
@@ -425,7 +248,7 @@
 
 					<div id="brand" class="item">
 						<a href="#">
-							<span class="wdsc"><img src="${re.contextPath}/static/images/wdsc.png" /></span>
+							<span class="wdsc"><img src="/images/wdsc.png" /></span>
 						</a>
 						<div class="mp_tooltip">
 							我的收藏
@@ -435,7 +258,7 @@
 
 					<div id="broadcast" class="item">
 						<a href="#">
-							<span class="chongzhi"><img src="${re.contextPath}/static/images/chongzhi.png" /></span>
+							<span class="chongzhi"><img src="/images/chongzhi.png" /></span>
 						</a>
 						<div class="mp_tooltip">
 							我要充值
@@ -451,7 +274,7 @@
 						<!--二维码 -->
 						<li class="qtitem">
 							<a href="#none"><span class="mpbtn_qrcode"></span></a>
-							<div class="mp_qrcode" style="display:none;"><img src="${re.contextPath}/static/images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
+							<div class="mp_qrcode" style="display:none;"><img src="/images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
 						</li>
 						<li class="qtitem">
 							<a href="#top" class="return_top"><span class="top"></span></a>
@@ -530,9 +353,9 @@
 			</div>
 		</div>
 		<script>
-			window.jQuery || document.write('<script src="${re.contextPath}/static/basic/js/jquery-1.9.min.js"><\/script>');
+			window.jQuery || document.write('<script src="/basic/js/jquery-1.9.min.js"><\/script>');
 		</script>
-		<script type="text/javascript" src="${re.contextPath}/static/basic/js/quick_links.js"></script>
+		<script type="text/javascript" src="/basic/js/quick_links.js"></script>
 
 <div class="theme-popover-mask"></div>
 
