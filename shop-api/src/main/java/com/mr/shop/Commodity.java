@@ -1,93 +1,54 @@
 package com.mr.shop;
 
+
+import lombok.Data;
+import org.apache.solr.client.solrj.beans.Field;
+
+@Data
 public class Commodity {
+    @Field("id")
     private Integer commId;
-
+    @Field("commt_id")
     private Integer commtId;
-
+    @Field("img_id")
     private Integer imgId;
-
+    @Field("comm_parameter")
     private String commParameter;
-
+    @Field("comm_moneyy")
     private Double commMoneyy;
-
+    @Field("comm_moneyc")
     private Double commMoneyc;
 
+    //标题  简介
+    @Field("comm_title")
     private String commTitle;
 
+    //商品数量
     private Integer commMany;
 
+    @Field("commd_miaoshu")
     private String commdMiaoshu;
 
-    public Integer getCommId() {
-        return commId;
-    }
+    //是否新品
+    private Integer commtNew;
+    //是否热卖
+    private Integer commtHot;
+    //是否在卖
+    private Integer commtShow;
 
-    public void setCommId(Integer commId) {
-        this.commId = commId;
-    }
+    //商品名
+    private String commtName;
 
-    public Integer getCommtId() {
-        return commtId;
-    }
+    //图片地址
+    private String imgUrl;
 
-    public void setCommtId(Integer commtId) {
-        this.commtId = commtId;
-    }
+    private Integer commtFater;
+    //所属分类
+    private Integer commtType;
 
-    public Integer getImgId() {
-        return imgId;
-    }
+    //所属品牌商
+    private Integer commtAgent;
 
-    public void setImgId(Integer imgId) {
-        this.imgId = imgId;
-    }
 
-    public String getCommParameter() {
-        return commParameter;
-    }
 
-    public void setCommParameter(String commParameter) {
-        this.commParameter = commParameter == null ? null : commParameter.trim();
-    }
-
-    public Double getCommMoneyy() {
-        return commMoneyy;
-    }
-
-    public void setCommMoneyy(Double commMoneyy) {
-        this.commMoneyy = commMoneyy;
-    }
-
-    public Double getCommMoneyc() {
-        return commMoneyc;
-    }
-
-    public void setCommMoneyc(Double commMoneyc) {
-        this.commMoneyc = commMoneyc;
-    }
-
-    public String getCommTitle() {
-        return commTitle;
-    }
-
-    public void setCommTitle(String commTitle) {
-        this.commTitle = commTitle == null ? null : commTitle.trim();
-    }
-
-    public Integer getCommMany() {
-        return commMany;
-    }
-
-    public void setCommMany(Integer commMany) {
-        this.commMany = commMany;
-    }
-
-    public String getCommdMiaoshu() {
-        return commdMiaoshu;
-    }
-
-    public void setCommdMiaoshu(String commdMiaoshu) {
-        this.commdMiaoshu = commdMiaoshu == null ? null : commdMiaoshu.trim();
-    }
 }
