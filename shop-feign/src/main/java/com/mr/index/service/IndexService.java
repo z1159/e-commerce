@@ -18,6 +18,6 @@ public interface IndexService {
 
     @RequestMapping(value = "queryCommtype",method = RequestMethod.GET)
     List<CommodityType> queryCommtype();
-/*    @RequestMapping(value = "solrQueryCommodity/{commTitle}/{page}/{size}",method = RequestMethod.GET)
-    Map<String,Object> solrQueryCommodity(@PathVariable String commTitle,@PathVariable Integer page,@PathVariable Integer size);*/
+    @RequestMapping(value = "solrQueryCommodity/{commTitle}/{page}/{size}",method = RequestMethod.GET)
+    Map<String,Object> solrQueryCommodity(@PathVariable("commTitle") String commTitle,@PathVariable("page") Integer page,@PathVariable("size") Integer size);
 }

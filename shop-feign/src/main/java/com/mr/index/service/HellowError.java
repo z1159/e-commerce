@@ -19,8 +19,8 @@ public class HellowError implements  IndexService{
         return null;
     }
 
-//    @Override
-//    public Map<String, Object> solrQueryCommodity(String commTitle, Integer page, Integer size) {
-//        return null;
-//    }
+    @Override
+    public Map<String, Object> solrQueryCommodity(String commTitle, Integer page, Integer size) {
+        return null;
+    }
 }

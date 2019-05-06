@@ -1,6 +1,7 @@
 package com.mr.index.controller;
 
 import com.mr.index.service.IndexService;
+import com.mr.shop.Commodity;
 import com.mr.shop.CommodityType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,12 +44,13 @@ public class IndexController {
         modelandView.addObject("listCommt",listCommt);
        return modelandView;
     }
-/*    @GetMapping("solrQueryCommodity/{commTitle}/{page}/{size}")
-    public ModelAndView solrQueryCommodity(@PathVariable String commTitle, @PathVariable Integer page, @PathVariable Integer size){
+    @GetMapping("solrQueryCommodity/{commTitle}/{page}/{size}")
+    public ModelAndView solrQueryCommodity(@PathVariable("commTitle") String commTitle, @PathVariable("page") Integer page, @PathVariable("size") Integer size){
       Map<String,Object> map= indexService.solrQueryCommodity(commTitle,page,size);
       ModelAndView model = new ModelAndView();
-      model.setViewName("/zcf/test");
+      List<Commodity> listsa=(List<Commodity>) map.get("commList");
+      model.setViewName("/zcf/search");
       model.addObject("goodboy",map);
       return model;
-    }*/
+    }
 }
