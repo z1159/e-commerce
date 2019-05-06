@@ -7,7 +7,7 @@ import org.apache.solr.client.solrj.beans.Field;
 @Data
 public class Commodity {
     @Field("id")
-    private Integer commId;
+    private String commId;
     @Field("commt_id")
     private Integer commtId;
     @Field("img_id")
