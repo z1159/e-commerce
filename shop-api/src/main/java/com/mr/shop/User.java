@@ -1,5 +1,8 @@
 package com.mr.shop;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class User {
@@ -11,6 +14,7 @@ public class User {
 
     private Integer userSex;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date userBir;
 
     private String userPhone;
@@ -26,6 +30,13 @@ public class User {
     private Integer userState;
 
     private String  userPass;
+
+    public String getUserBirStr(){
+        if(userBir !=null && !userBir.equals("")){
+            return new SimpleDateFormat("yyyy-MM-dd").format(userBir);
+        }
+         return "";
+    }
 
     public Integer getUserId() {
         return userId;
