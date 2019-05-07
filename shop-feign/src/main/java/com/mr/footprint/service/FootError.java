@@ -7,8 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by asus on 2019/5/6.
+ * Created by asus on 2019/5/7.
  */
-public interface FootPrintService {
-    void zujiMogo( Commodity commodity);
+public class FootError implements  FootPrintService{
+    @Override
+    public void zujiMogo( Commodity commodity) {
+
+    }
 }
