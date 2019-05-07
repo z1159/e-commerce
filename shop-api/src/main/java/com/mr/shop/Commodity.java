@@ -7,7 +7,7 @@ import org.apache.solr.client.solrj.beans.Field;
 import java.io.Serializable;
 
 @Data
-public class Commodity implements Serializable{
+public class Commodity  extends User implements Serializable{
     @Field("id")
     private String commId;
     @Field("commt_id")
