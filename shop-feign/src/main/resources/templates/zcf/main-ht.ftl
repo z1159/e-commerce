@@ -127,7 +127,7 @@
                     </dd>
                     <dd>
                         <#--<a href="">优惠券管理</a>-->
-                        <a href="#" data-url="discountPage" data-title="优惠券管理" data-id="42" class="site-demo-active" data-type="tabAdd">优惠券管理</a>
+                        <a href="#" data-url="/coupon/openCouponList" data-title="优惠券管理" data-id="42" class="site-demo-active" data-type="tabAdd">优惠券管理</a>
                     </dd>
                     <dd>
                         <#--<a href="">专题管理</a>-->
