@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mr.commodity.mapper.CommdMapper">
+    <select id="queryCommdList"  resultType="com.mr.shop.Commodity">
+        select
+        *
+        from commodity_type a LEFT JOIN T_commodity b on a.commt_id = b.commt_id LEFT JOIN T_img c on c.img_id = b.img_id
+    </select>
+
+    <select id="selectByCommId"  resultType="com.mr.shop.Commodity" parameterType="java.lang.Integer">
+        select
+        *
+        from commodity_type a LEFT JOIN T_commodity b on a.commt_id = b.commt_id LEFT JOIN T_img c on c.img_id = b.img_id
+        WHERE
+            a.commt_Id = #{commtId,jdbcType=INTEGER}
+    </select>
+
+    <!--<insert id="addCommodityType" parameterType="com.mr.shop.Commodity"-->
+
+            <!--keyColumn="commt_id" keyProperty="commtId" useGeneratedKeys="true">-->
+
+        <!--insert into-->
+        <!--commodity_type(product_id, casenumber, base_price20, base_price40,remark)-->
+        <!--values-->
+        <!--(#{productId,jdbcType=BIGINT}, #{casenumber,jdbcType=INTEGER}, #{basePrice20,jdbcType=DECIMAL}, #{basePrice40,jdbcType=DECIMAL},#{remark,jdbcType=VARCHAR})-->
+    <!--</insert>-->
+    <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+        <!--delete from t_bank-->
+        <!--where bank_id = #{bankId,jdbcType=INTEGER}-->
+    <!--</delete>-->
+    <!--<insert id="insert" parameterType="com.mr.bank.pojo.Bank">-->
+        <!--insert into t_bank (bank_id, bank_no, bank_type,-->
+        <!--bank_belong, bank_name, bank_money,-->
+        <!--bank_date)-->
+        <!--values (#{bankId,jdbcType=INTEGER}, #{bankNo,jdbcType=VARCHAR}, #{bankType,jdbcType=INTEGER},-->
+        <!--#{bankBelong,jdbcType=INTEGER}, #{bankName,jdbcType=VARCHAR}, #{bankMoney,jdbcType=DOUBLE},-->
+        <!--#{bankDate,jdbcType=TIMESTAMP})-->
+    <!--</insert>-->
+    <insert id="insertCommodityType" parameterType="com.mr.shop.Commodity"
+            useGeneratedKeys="true" keyProperty="commtId">
+        insert into commodity_type
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="commtFater != null">
+                commt_Fater,
+            </if>
+            <if test="commtName != null and commtName!=''">
+                commt_Name,
+            </if>
+            <if test="commtNew != null">
+                commt_New,
+            </if>
+            <if test="commtHot != null">
+                commt_Hot,
+            </if>
+            <if test="commtShow != null">
+                commt_Show,
+            </if>
+            <if test="commtType != null">
+                commt_Type,
+            </if>
+            <if test="commtAgent != null">
+                commt_Agent,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="commtFater != null">
+                #{commtFater,jdbcType=INTEGER},
+            </if>
+            <if test="commtName != null">
+                #{commtName,jdbcType=VARCHAR},
+            </if>
+            <if test="commtNew != null">
+                #{commtNew,jdbcType=INTEGER},
+            </if>
+            <if test="commtHot != null">
+                #{commtHot,jdbcType=INTEGER},
+            </if>
+            <if test="commtShow != null">
+                #{commtShow,jdbcType=INTEGER},
+            </if>
+            <if test="commtType != null">
+                #{commtType,jdbcType=INTEGER},
+            </if>
+            <if test="commtAgent != null">
+                #{commtAgent,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <insert id="insertCommodity" parameterType="com.mr.shop.Commodity">
+        insert into T_commodity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="commtId != null">
+                commt_Id,
+            </if>
+            <if test="imgId != null">
+                img_Id,
+            </if>
+            <if test="commParameter != null and commParameter!=''">
+                comm_parameter,
+            </if>
+            <if test="commMoneyy != null">
+                comm_moneyy,
+            </if>
+            <if test="commMoneyc != null">
+                comm_moneyc,
+            </if>
+            <if test="commTitle != null and commTitle!=''">
+                comm_title,
+            </if>
+            <if test="commdMiaoshu != null and commdMiaoshu!=''">
+                commd_miaoshu,
+            </if>
+            <if test="commMany != null">
+                comm_many
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="commtId != null">
+                #{commtId,jdbcType=INTEGER},
+            </if>
+            <if test="imgId != null">
+                #{imgId,jdbcType=INTEGER},
+            </if>
+            <if test="commParameter != null and commParameter!=''">
+                #{commParameter,jdbcType=VARCHAR},
+            </if>
+            <if test="commMoneyy != null">
+                #{commMoneyy,jdbcType=DOUBLE},
+            </if>
+            <if test="commMoneyc != null">
+                #{commMoneyc,jdbcType=DOUBLE},
+            </if>
+            <if test="commTitle != null and commTitle!=''">
+                #{commTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="commdMiaoshu != null and commdMiaoshu!=''">
+                #{commdMiaoshu},
+            </if>
+            <if test="commMany != null">
+                #{commMany,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delateCommd" parameterType="java.lang.Integer">
+    delete from T_commodity
+    where commt_Id = #{commtId,jdbcType=INTEGER}
+    </delete>
+
+    <delete id="delateCommdType" parameterType="java.lang.Integer">
+    delete from commodity_type
+    where commt_Id = #{commtId,jdbcType=INTEGER}
+    </delete>
+
+
+
+    <update id="updateCommodityType" parameterType="com.mr.shop.Commodity">
+        update  commodity_type
+        <set>
+            <if test="commtFater != null">
+                commt_Fater = #{commtFater,jdbcType=INTEGER},
+            </if>
+            <if test="commtName != null and commtName!=''">
+                commt_Name = #{commtName,jdbcType=VARCHAR},
+            </if>
+            <if test="commtNew != null">
+                commt_New = #{commtNew,jdbcType=INTEGER},
+            </if>
+            <if test="commtHot != null">
+                commt_Hot = #{commtHot,jdbcType=INTEGER},
+            </if>
+            <if test="commtShow != null">
+                commt_Show = #{commtShow,jdbcType=INTEGER},
+            </if>
+            <if test="commtType != null">
+                commt_Type  = #{commtType,jdbcType=INTEGER},
+            </if>
+            <if test="commtAgent != null">
+                commt_Agent = #{commtAgent,jdbcType=INTEGER},
+            </if>
+        </set>
+        WHERE
+          commt_Id = #{commtId,jdbcType=INTEGER}
+    </update>
+    <update id="updateCommodity" parameterType="com.mr.shop.Commodity">
+        update  T_commodity
+        <set>
+            <if test="commtId != null">
+                commt_Id = #{commtId,jdbcType=INTEGER},
+            </if>
+            <if test="imgId != null">
+                img_Id = #{imgId,jdbcType=INTEGER},
+            </if>
+            <if test="commParameter != null and commParameter!=''">
+                comm_parameter = #{commParameter,jdbcType=VARCHAR},
+            </if>
+            <if test="commMoneyy != null">
+                comm_moneyy =  #{commMoneyy,jdbcType=DOUBLE},
+            </if>
+            <if test="commMoneyc != null">
+                comm_moneyc = #{commMoneyc,jdbcType=DOUBLE},
+            </if>
+            <if test="commTitle != null and commTitle!=''">
+                comm_title =  #{commTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="commdMiaoshu != null and commdMiaoshu!=''">
+                commd_miaoshu = #{commdMiaoshu},
+            </if>
+            <if test="commMany != null">
+                comm_many = #{commMany,jdbcType=INTEGER},
+            </if>
+        </set>
+        WHERE
+        commt_Id = #{commtId,jdbcType=INTEGER}
+    </update>
+    <!--<update id="updateByPrimaryKeySelective" parameterType="com.mr.bank.pojo.Bank">-->
+        <!--update t_bank-->
+        <!--<set>-->
+            <!--<if test="bankNo != null">-->
+                <!--bank_no = #{bankNo,jdbcType=VARCHAR},-->
+            <!--</if>-->
+            <!--<if test="bankType != null">-->
+                <!--bank_type = #{bankType,jdbcType=INTEGER},-->
+            <!--</if>-->
+            <!--<if test="bankBelong != null">-->
+                <!--bank_belong = #{bankBelong,jdbcType=INTEGER},-->
+            <!--</if>-->
+            <!--<if test="bankName != null">-->
+                <!--bank_name = #{bankName,jdbcType=VARCHAR},-->
+            <!--</if>-->
+            <!--<if test="bankMoney != null">-->
+                <!--bank_money = #{bankMoney,jdbcType=DOUBLE},-->
+            <!--</if>-->
+            <!--<if test="bankDate != null">-->
+                <!--bank_date = #{bankDate,jdbcType=TIMESTAMP},-->
+            <!--</if>-->
+        <!--</set>-->
+        <!--where bank_id = #{bankId,jdbcType=INTEGER}-->
+    <!--</update>-->
+    <!--<update id="updateByPrimaryKey" parameterType="com.mr.bank.pojo.Bank">-->
+        <!--update t_bank-->
+        <!--set bank_no = #{bankNo,jdbcType=VARCHAR},-->
+        <!--bank_type = #{bankType,jdbcType=INTEGER},-->
+        <!--bank_belong = #{bankBelong,jdbcType=INTEGER},-->
+        <!--bank_name = #{bankName,jdbcType=VARCHAR},-->
+        <!--bank_money = #{bankMoney,jdbcType=DOUBLE},-->
+        <!--bank_date = #{bankDate,jdbcType=TIMESTAMP}-->
+        <!--where bank_id = #{bankId,jdbcType=INTEGER}-->
+    <!--</update>-->
+    <!--<select id="queryBankList"  resultType="Bank">-->
+        <!--select-->
+        <!--bank_id as bankId, bank_no as bankNo, bank_type as bankType, bank_belong as bankBelong, bank_name as bankName, bank_money as bankMoney, bank_date as bankDate-->
+        <!--from t_bank-->
+    <!--</select>-->
+    <!--<select id="selectByBankNo" parameterType="String" resultType="Bank">-->
+        <!--select-->
+        <!--<include refid="Base_Column_List" />-->
+        <!--from t_bank-->
+        <!--where bank_no = #{bankNo,jdbcType=VARCHAR}-->
+    <!--</select>-->
+    <!--<update id="updateMoneyByPrimaryKeySelective" >-->
+        <!--update t_bank-->
+        <!--<set>-->
+            <!--<if test="bankMoney != null">-->
+                <!--bank_money = #{bankMoney,jdbcType=DOUBLE},-->
+            <!--</if>-->
+        <!--</set>-->
+        <!--where bank_No = #{bankNo}-->
+    <!--</update>-->
+</mapper>

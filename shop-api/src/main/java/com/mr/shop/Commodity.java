@@ -4,8 +4,10 @@ package com.mr.shop;
 import lombok.Data;
 import org.apache.solr.client.solrj.beans.Field;
 
+import java.io.Serializable;
+
 @Data
-public class Commodity {
+public class Commodity implements Serializable{
     @Field("id")
     private String commId;
     @Field("commt_id")
