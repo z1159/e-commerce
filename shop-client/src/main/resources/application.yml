@@ -29,6 +29,8 @@ spring:
   data:
     solr:
       host: http://localhost:8088/solr
+    mongodb:
+      uri: mongodb://localhost:27017/mr
 eureka:
   client:
     serviceUrl:
