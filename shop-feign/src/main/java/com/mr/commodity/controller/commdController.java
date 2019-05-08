@@ -21,6 +21,7 @@ public class commdController {
     @Autowired
     private CommdService commdService;
 
+    //查询商品列表 分页
     @RequestMapping("queryCommdList")
     @ResponseBody
     public DataVo<Commodity> queryCommdList(Page page){
@@ -28,6 +29,8 @@ public class commdController {
         DataVo<Commodity> dataVo = commdService.queryCommdList(page);
         return dataVo;
     }
+
+    //打开商品列表查询页
     @RequestMapping("openCommnList")
     public ModelAndView openCommnList(){
         ModelAndView mv = new ModelAndView();
@@ -36,7 +39,7 @@ public class commdController {
 
         return mv;
     }
-
+    //打开新增页
     @RequestMapping("openCommnAdd")
     public ModelAndView openCommnAdd(){
         ModelAndView mv = new ModelAndView();
@@ -45,14 +48,14 @@ public class commdController {
 
         return mv;
     }
-
+    //新增/修改商品
     @RequestMapping("addCommd")
     @ResponseBody
     public ResultVo<Commodity> addCommd(Commodity commodity){
         ResultVo<Commodity> rsVo = commdService.addCommd(commodity);
         return rsVo;
     }
-
+    //删除商品
     @RequestMapping("deleteCommd/{commtId}")
     @ResponseBody
     public ResultVo<Commodity> deleteCommd(@PathVariable("commtId") Integer commtId){
@@ -60,6 +63,7 @@ public class commdController {
         return rstVo;
     }
 
+    //打开修改商品页
     @RequestMapping("openCommnUpdate/{commtId}")
     public ModelAndView openCommnUpdate(@PathVariable("commtId") Integer commtId){
         Commodity commodity = commdService.selectByCommId(commtId);
