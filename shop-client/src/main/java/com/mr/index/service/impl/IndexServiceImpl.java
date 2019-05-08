@@ -35,7 +35,8 @@ public class IndexServiceImpl implements IndexService{
     @Override
     public Map<String, Object> solrQueryCommodity(String commTitle, Integer page, Integer size) throws IOException, SolrServerException {
         SolrQuery params = new SolrQuery();
-        params.setQuery("comm_title:"+commTitle);
+       params.setQuery("comm_title:"+commTitle);
+      //  params.setQuery("*:"+"*");
         params.addSort("id", SolrQuery.ORDER.desc);
         params.setStart(page);
         params.setRows(size);
