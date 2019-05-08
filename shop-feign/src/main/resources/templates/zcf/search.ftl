@@ -74,7 +74,7 @@
 										<#list goodboy[key] as listcom>
 
                                             <li>
-                                                <div class="i-pic limit">
+                                                <div class="i-pic limit" onclick="zujiFun(${listcom.commtId})">
 
                                                     <img src="/images/quanlver.jpg" />
                                                     <p class="title fl">${listcom.commTitle}</p>
@@ -359,6 +359,11 @@
 
 <div class="theme-popover-mask"></div>
 
+	<script >
+       function zujiFun(i) {
+		 location.href="/footPrintController/zujiMogo/"+i;
+       }
+	</script>
 	</body>
 
 </html>
