@@ -1,7 +1,6 @@
 package com.mr.shop;
 
 import com.mr.utils.Page;
-
 import java.util.Date;
 
 public class Order extends Page{
