@@ -10,46 +10,47 @@
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-		<link rel="stylesheet" href="${re.contextPath}/static/AmazeUI-2.4.2/assets/css/amazeui.css" />
-		<link href="${re.contextPath}/static/css/dlstyle.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="../AmazeUI-2.4.2/assets/css/amazeui.css" />
+		<link href="../css/dlstyle.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
 	</head>
 
 	<body>
 
 		<div class="login-boxtitle">
-			<a href="home.html"><img alt="logo" src="${re.contextPath}/static/images/logobig.png" /></a>
+			<a href="home.html"><img alt="logo" src="../images/logobig.png" /></a>
 		</div>
 
 		<div class="login-banner">
 			<div class="login-main">
-				<div class="login-banner-bg"><span></span><img src="${re.contextPath}/static/images/big.jpg" /></div>
+				<div class="login-banner-bg"><span></span><img src="../images/big.jpg" /></div>
 				<div class="login-box">
 
 							<h3 class="title">登录商城</h3>
 
 							<div class="clear"></div>
-
-						<div class="login-form">
+					<div class="login-form">
 						  <form>
 							   <div class="user-name">
 								    <label for="user"><i class="am-icon-user"></i></label>
-								    <input type="text" name="" id="user" placeholder="邮箱/手机/用户名">
-                 </div>
-                 <div class="user-pass">
+								    <input type="text" name="userName" id="userName" placeholder="邮箱/手机/用户名">
+                 					<span id="msg"></span>
+							   </div>
+                 				<div class="user-pass">
 								    <label for="password"><i class="am-icon-lock"></i></label>
-								    <input type="password" name="" id="password" placeholder="请输入密码">
-                 </div>
-              </form>
-           </div>
+								    <input type="password" name="userPass" id="userPass" placeholder="请输入密码">
+                 				</div>
+						  </form>
+					</div>
 
             <div class="login-links">
                 <label for="remember-me"><input id="remember-me" type="checkbox">记住密码</label>
 								<a href="#" class="am-fr">忘记密码</a>
-								<a href="register.ftl" class="zcnext am-fr am-btn-default">注册</a>
+								<a href="toRegister" class="zcnext am-fr am-btn-default">注册</a>
 								<br />
             </div>
 								<div class="am-cf">
-									<input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm">
+									<input type="button" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm" onclick="login()">
 								</div>
 						<div class="partner">
 								<h3>合作账号</h3>
@@ -89,4 +90,28 @@
 					</div>
 	</body>
 
+	<script>
+
+       	 //登录函数
+        function login(){
+            var userName = $(" input[ name='userName' ] ").val();
+            var userPass = $(" input[ name='userPass' ] ").val();
+            $.ajax({
+                url:"qianLoginUser",
+                data:{"userName":userName,"userPass":userPass},
+                type:"post",
+                dataType:"json",
+                success:function(data){
+                    if(data.code==200){
+                     $("#msg").html("<font color='green'>"+data.msg+"</font>");
+                        window.location = "toQianIndex";
+                    }else if (data.code == 500){
+                      alert("用户名或密码错误，请重试");
+                }
+               }
+            })
+        }
+
+
+	</script>
 </html>
