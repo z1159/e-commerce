@@ -6,15 +6,15 @@
 
     <title>个人资料</title>
 
-    <link href="${re.contextPath}/static/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
-    <link href="${re.contextPath}/static/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+    <link href="/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+    <link href="/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
 
-    <link href="${re.contextPath}/static/css/personal.css" rel="stylesheet" type="text/css">
-    <link href="${re.contextPath}/static/css/infstyle.css" rel="stylesheet" type="text/css">
-    <script src="${re.contextPath}/static/AmazeUI-2.4.2/assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="${re.contextPath}/static/AmazeUI-2.4.2/assets/js/amazeui.js" type="text/javascript"></script>
-    <script type="text/javascript" src="${re.contextPath}/static/basic/js/jquery-1.7.min.js"></script>
-    <script type="text/javascript" src="${re.contextPath}/static/js/script.js"></script>
+    <link href="/css/personal.css" rel="stylesheet" type="text/css">
+    <link href="/css/infstyle.css" rel="stylesheet" type="text/css">
+    <script src="/AmazeUI-2.4.2/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/AmazeUI-2.4.2/assets/js/amazeui.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/basic/js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
 </head>
 <body>
 
@@ -174,9 +174,9 @@
         var address = $("#address").val();
         $.ajax({
             url:"tianjia.php", //要处理的页面
-            data:{userName:name,userPhone:userPhone,useraAddress:address},  //要传过去的数据
+            data:{userName:name,userPhone:phone,useraAddress:address},  //要传过去的数据
             type:"POST",  //提交方式
-
+            url:'/addressController/addAddress',
             dataType:"TEXT", //返回的数据类型，TEXT字符串 JSON返回JSON XML返回XML；dataType中T要大写！！
             success: function(data){ //回调函数，data为形参，是从login-cl.php页面返回的值
                 if(data.trim()=="OK") //trim()去空格
