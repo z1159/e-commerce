@@ -5,7 +5,16 @@ spring:
       allow-bean-definition-overriding: true
   application:
     name: consumer-feign
+  main:
+    allow-bean-definition-overriding: true
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+feign:
+  client:
+    config:
+      default:           #服务名，填写default为所有服务
+        connectTimeout: 10000
+        readTimeout: 12000

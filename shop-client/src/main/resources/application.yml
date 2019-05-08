@@ -5,8 +5,8 @@ spring:
     name: provider-hello
   datasource:
         url: jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=UTF-8
-        username: root
-        password: root
+        username: mr_zry
+        password: 123
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
@@ -23,9 +23,14 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+        druid:
+          test-on-borrow: true
+          validation-query: SELECT 1
   data:
     solr:
       host: http://localhost:8088/solr
+    mongodb:
+      uri: mongodb://localhost:27017/mr
 eureka:
   client:
     serviceUrl:
@@ -44,4 +49,6 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params:
+
+
 

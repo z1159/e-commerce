@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mr.coupon.mapper.CouponMapper">
+    <select id="queryCouponList"  resultType="com.mr.shop.Coupon">
+        select
+        *
+        from t_coupon
+    </select>
+
+    <select id="selectByCouponId"  resultType="com.mr.shop.Coupon" parameterType="java.lang.Integer">
+        select
+        *
+        from t_coupon
+        WHERE
+            coupon_Id = #{couponId,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insertCoupon" parameterType="com.mr.shop.Coupon">
+        insert into t_coupon
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cpName != null and cpName!=''">
+                cp_Name,
+            </if>
+            <if test="cpPresent != null and cpPresent!=''">
+                cp_Present,
+            </if>
+            <if test="cpTitle != null and cpTitle!=''">
+                cp_Title,
+            </if>
+            <if test="cpMeet != null">
+                cp_Meet,
+            </if>
+            <if test="cpSubtract != null">
+                cp_Subtract,
+            </if>
+            <if test="cpAverage != null">
+                cp_Average,
+            </if>
+            <if test="cpRange != null">
+                cp_Range,
+            </if>
+            <if test="cpType != null">
+                cp_Type,
+            </if>
+            <if test="cpCount != null">
+                cp_Count,
+            </if>
+            <if test="cpState != null">
+                cp_State,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cpName != null">
+                #{cpName,jdbcType=VARCHAR},
+            </if>
+            <if test="cpPresent != null">
+                #{cpPresent,jdbcType=VARCHAR},
+            </if>
+            <if test="cpTitle != null">
+                #{cpTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="cpMeet != null">
+                #{cpMeet,jdbcType=DOUBLE},
+            </if>
+            <if test="cpSubtract != null">
+                #{cpSubtract,jdbcType=DOUBLE},
+            </if>
+            <if test="cpAverage != null">
+                #{cpAverage,jdbcType=INTEGER},
+            </if>
+            <if test="cpRange != null">
+                #{cpRange,jdbcType=INTEGER},
+            </if>
+            <if test="cpType != null">
+                #{cpType,jdbcType=INTEGER},
+            </if>
+            <if test="cpCount != null">
+                #{cpCount,jdbcType=INTEGER},
+            </if>
+            <if test="cpState != null">
+                #{cpState,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+
+    <delete id="deleteCoupon" parameterType="java.lang.Integer">
+    delete from T_coupon
+    where coupon_Id = #{couponId,jdbcType=INTEGER}
+    </delete>
+
+
+
+    <update id="updateCoupon" parameterType="com.mr.shop.Coupon">
+        update  T_coupon
+        <set>
+            <if test="cpName != null">
+                cp_Name = #{cpName,jdbcType=VARCHAR},
+            </if>
+            <if test="cpPresent != null and cpPresent!=''">
+                cp_Present = #{cpPresent,jdbcType=VARCHAR},
+            </if>
+            <if test="cpTitle != null">
+                cp_Title = #{cpTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="cpMeet != null">
+                cp_Meet = #{cpMeet,jdbcType=DOUBLE},
+            </if>
+            <if test="cpSubtract != null">
+                cp_Subtract = #{cpSubtract,jdbcType=DOUBLE},
+            </if>
+            <if test="cpAverage != null">
+                cp_Average  = #{cpAverage,jdbcType=INTEGER},
+            </if>
+            <if test="cpRange != null">
+                cp_Range = #{cpRange,jdbcType=INTEGER},
+            </if>
+            <if test="cpType != null">
+                cp_Type = #{cpType,jdbcType=INTEGER},
+            </if>
+            <if test="cpCount != null">
+                cp_Count = #{cpCount,jdbcType=INTEGER},
+            </if>
+            <if test="cpState != null">
+                cp_State = #{cpState,jdbcType=INTEGER},
+            </if>
+        </set>
+        WHERE
+            coupon_Id = #{couponId,jdbcType=INTEGER}
+    </update>
+
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mr.user.mapper.UserMapper">
+
+        <select id="loginUser" parameterType="String" resultType="com.mr.shop.User">
+           select user_id,user_name,user_grade,user_sex,user_bir,user_phone,user_mail,user_mibaoa,user_mibaob,user_mibaoc,user_state,user_pass
+            from t_user where user_name=#{userName}
+        </select>
+
+        <insert id="saveUser" parameterType="com.mr.shop.User">
+            insert into t_user(
+              user_name,
+              user_grade,
+              user_sex,
+              user_bir,
+              user_phone,
+              user_mail,
+              user_mibaoa,
+              user_mibaob,
+              user_mibaoc,
+              user_state,
+              user_pass
+            )values(
+              #{userName},
+              #{userGrade},
+              #{userSex},
+              #{userBir},
+              #{userPhone},
+              #{userMail},
+              #{userMibaoa},
+              #{userMibaob},
+              #{userMibaoc},
+              #{userState},
+              #{userPass}
+            )
+        </insert>
+
+        <select id="queryUserList" resultType="com.mr.shop.User">
+            select user_id,user_name,user_grade,user_sex,user_bir,user_phone,user_mail,user_mibaoa,user_mibaob,user_mibaoc,user_state,user_pass
+            from t_user
+        </select>
+
+</mapper>

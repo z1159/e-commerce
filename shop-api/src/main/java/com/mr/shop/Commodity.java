@@ -4,10 +4,12 @@ package com.mr.shop;
 import lombok.Data;
 import org.apache.solr.client.solrj.beans.Field;
 
+import java.io.Serializable;
+
 @Data
-public class Commodity {
+public class Commodity  extends User implements Serializable{
     @Field("id")
-    private Integer commId;
+    private String commId;
     @Field("commt_id")
     private Integer commtId;
     @Field("img_id")
