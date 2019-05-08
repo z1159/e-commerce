@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class FootError implements  FootPrintService{
     @Override
-    public void zujiMogo( Commodity commodity) {
-
+    public String zujiMogo( Commodity commodity) {
+        return "咱也不敢问咱也不敢说";
     }
 }

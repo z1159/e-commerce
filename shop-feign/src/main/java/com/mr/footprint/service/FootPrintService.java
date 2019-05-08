@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 @FeignClient(value = "provider-hello",fallback = FootError.class)
 public interface FootPrintService {
 
-    @RequestMapping(value = "zujiMogo",method = RequestMethod.GET)
-    void zujiMogo(Commodity commodity);
+    @RequestMapping(value = "/foot/zujiMogo",method = RequestMethod.POST,consumes = "application/json")
+    String zujiMogo(@RequestBody  Commodity commodity);
 }

@@ -51,7 +51,7 @@ public class UserController {
 
 
 
-    //前台注册
+    //注册
     @RequestMapping(value = "registerUser",method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "注册")
