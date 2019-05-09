@@ -43,19 +43,25 @@ public class UserController {
     //前台登录
     @RequestMapping(value = "qianLoginUser",method = RequestMethod.POST)
     @ResponseBody
-    @ApiOperation(value = "登录")
+    @ApiOperation(value = "前台登录")
     public ResultVo qianLoginUser(@RequestBody User user){
         return userService.qianLoginUser(user);
     }
 
 
-
+    //校验账号唯一
+    @RequestMapping(value = "userByName",method = RequestMethod.GET)
+    @ResponseBody
+    @ApiOperation(value = "校验账号唯一")
+    public ResultVo userByName(String userName){
+        return userService.userByName(userName);
+    }
 
     //前台注册
     @RequestMapping(value = "registerUser",method = RequestMethod.POST)
     @ResponseBody
-    @ApiOperation(value = "注册")
-    public ResultVo registerUser(User user){
+    @ApiOperation(value = "前台注册")
+    public ResultVo registerUser(@RequestBody User user){
         return userService.registerUser(user);
     }
 

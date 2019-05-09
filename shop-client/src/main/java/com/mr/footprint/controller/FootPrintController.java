@@ -4,22 +4,33 @@ import com.mr.footprint.service.FootPrintService;
 import com.mr.shop.Commodity;
 import com.mr.shop.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
  * Created by asus on 2019/5/6.
  */
-@RestController
+@Controller
+@RequestMapping("foot")
 public class FootPrintController {
 
     @Autowired
     private FootPrintService footPrintService;
 
 
-    @GetMapping("zujiMogo")
-    public void zujiMogo(Commodity commodity){
-        footPrintService.zujiMogo(commodity);
+    @RequestMapping(value ="zujiMogo",method = RequestMethod.POST)
+    @ResponseBody
+    public String zujiMogo(@RequestBody Commodity commodity){
+        footPrintService.zujiMogo( commodity);
+        return "mogondb新增成功";
     }
 
+    @RequestMapping(value ="queryZuJi",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Commodity> queryZuJi(@RequestParam("userId")Integer userId){
+       return  footPrintService.queryZuJi(userId);
+    }
 }

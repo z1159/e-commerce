@@ -99,6 +99,13 @@ public class UserController {
         return userService.qianLoginUser(user);
     }
 
+    //前台校验账号唯一
+    @RequestMapping("userByName")
+    @ResponseBody
+    public ResultVo userByName(String userName){
+        return userService.userByName(userName);
+    }
+
     //前台注册
     @RequestMapping("registerUser")
     @ResponseBody
