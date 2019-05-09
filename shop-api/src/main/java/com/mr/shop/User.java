@@ -10,7 +10,7 @@ public class User {
 
     private String userName;
 
-    private Integer userGrade;
+    private Integer userGrade=1;
 
     private Integer userSex;
 
@@ -27,7 +27,7 @@ public class User {
 
     private String userMibaoc;
 
-    private Integer userState;
+    private Integer userState=1;
 
     private String  userPass;
 
