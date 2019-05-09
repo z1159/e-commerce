@@ -39,4 +39,13 @@ public class FootPrintServiceImpl implements FootPrintService{
         }
 
     }
+
+    @Override
+    public List<Commodity> queryZuJi(Integer userId) {
+        Query query = new Query();
+        Criteria criteria = Criteria.where("userId").is(userId);
+        query.addCriteria(criteria);
+        List<Commodity> commodities = mongoTemplate.find(query, Commodity.class);
+        return commodities;
+    }
 }

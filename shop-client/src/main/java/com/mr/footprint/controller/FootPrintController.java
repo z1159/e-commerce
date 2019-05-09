@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 /**
  * Created by asus on 2019/5/6.
@@ -26,4 +28,9 @@ public class FootPrintController {
         return "mogondb新增成功";
     }
 
+    @RequestMapping(value ="queryZuJi",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Commodity> queryZuJi(@RequestParam("userId")Integer userId){
+       return  footPrintService.queryZuJi(userId);
+    }
 }
