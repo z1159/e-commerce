@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created by asus on 2019/5/7.
@@ -20,4 +21,7 @@ public interface FootPrintService {
 
     @RequestMapping(value = "/foot/zujiMogo",method = RequestMethod.POST,consumes = "application/json")
     String zujiMogo(@RequestBody  Commodity commodity);
+
+    @RequestMapping(value = "/foot/queryZuJi",method = RequestMethod.POST,consumes = "application/json")
+    List<Commodity> queryZuJi(@RequestParam("userId") Integer userId);
 }
