@@ -15,4 +15,9 @@ public class HtaminController {
 
         return "/zcf/main-ht";
     }
+    @RequestMapping("opTest")
+    public String opTest(){
+
+        return "/zcf/qt/introduction";
+    }
 }

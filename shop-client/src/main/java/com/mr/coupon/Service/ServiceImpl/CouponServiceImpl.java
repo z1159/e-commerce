@@ -4,14 +4,19 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.mr.coupon.Service.CouponService;
 import com.mr.coupon.mapper.CouponMapper;
+import com.mr.shop.ComCoupon;
 import com.mr.shop.Coupon;
+import com.mr.shop.User;
 import com.mr.utils.DataVo;
 import com.mr.utils.Page;
 import com.mr.utils.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -66,5 +71,15 @@ public class CouponServiceImpl implements CouponService {
         Coupon coupon = couponMapper.selectByCouponId(couponId);
 
         return coupon;
+    }
+
+    @Override
+    public List<ComCoupon> openQtCoupon() {
+        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = servletRequestAttributes.getRequest();
+        User user = (User) request.getSession().getAttribute("user");
+        List<ComCoupon> comCouponList = couponMapper.openQtCoupon(1);
+
+        return comCouponList;
     }
 }
