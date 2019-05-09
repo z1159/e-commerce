@@ -4,6 +4,9 @@ import com.mr.bj.Comment;
 import com.mr.bj.Order;
 import com.mr.bj.OrderInfo;
 import com.mr.comment.service.CommentService;
+import com.mr.utils.DataVo;
+import com.mr.utils.Page;
+import com.mr.utils.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,7 +24,7 @@ public class CommentController {
     private CommentService commentService;
 
     /**
-     * 进入个人评价管理url:localhost:8765/CommentController/goToComment
+     * 进入个人评价管理url:localhost:8765/commentController/goToComment
      */
     @GetMapping("goToComment")
     public ModelAndView goToComment(Comment c){
@@ -33,7 +36,7 @@ public class CommentController {
     }
 
     /**
-     * 进入订单管理url:localhost:8765/CommentController/goToOrder
+     * 前台进入订单管理url:localhost:8765/commentController/goToOrder
      * @return
      */
     @GetMapping("goToOrder")
@@ -46,16 +49,40 @@ public class CommentController {
     }
 
     /**
-     * 删除订单url:localhost:8765/CommentController/orderDel
-     * @param o
+     * 打开后台订单管理页面
+     * @return
      */
-    @GetMapping("orderDel")
-    public void orderDel(Order o){
-        commentService.orderDel(o.getOrderId());
+    @RequestMapping("goTo")
+    @ResponseBody
+    public ModelAndView goTo(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/zcf/ht/order-list");
+        return mv;
     }
 
     /**
-     * 进入订单详情页面url:localhost:8765/CommentController/goToOrderinfo
+     * 后台查询订单管理url:localhost:8765/commentController/goToOrderList
+     * @param page
+     * @return
+     */
+    @RequestMapping(value = "goToOrderList")
+    @ResponseBody
+    public DataVo<Order> goToOrderList(Page page){
+        DataVo<Order> dataVo = commentService.goToOrderList(page);
+        return dataVo;
+    }
+
+    /**
+     * 删除订单url:localhost:8765/commentController/orderDel
+     */
+    @DeleteMapping("orderDel/{orderId}")
+    @ResponseBody
+    public void orderDel(@PathVariable Integer orderId){
+        commentService.orderDel(orderId);
+    }
+
+    /**
+     * 进入订单详情页面url:localhost:8765/commentController/goToOrderinfo
      * @return
      */
     @GetMapping("goToOrderinfo")

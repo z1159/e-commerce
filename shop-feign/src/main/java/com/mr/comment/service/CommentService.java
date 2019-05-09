@@ -3,9 +3,10 @@ package com.mr.comment.service;
 import com.mr.bj.Comment;
 import com.mr.bj.Order;
 import com.mr.bj.OrderInfo;
-import feign.Param;
+import com.mr.utils.DataVo;
+import com.mr.utils.Page;
+import com.mr.utils.ResultVo;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +26,7 @@ public interface CommentService {
     List<OrderInfo> queryOrderInfo(@RequestBody Integer orderId);
 
     @RequestMapping(value = "/commentController/orderDel")
-    void orderDel(Integer orderId);
+    ResultVo orderDel(@RequestBody Integer orderId);
 
     @RequestMapping(value = "/commentController/orderUpdate1")
     void orderUpdate1(Integer orderId);
@@ -50,4 +51,7 @@ public interface CommentService {
 
     @RequestMapping(value = "/commentController/queryOrder4")
     List<Order> queryOrder4(Integer userId);
+
+    @RequestMapping(value = "/commentController/goToOrderList",method = {RequestMethod.POST},produces="application/json")
+    DataVo goToOrderList(@RequestBody Page page);
 }

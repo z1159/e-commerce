@@ -4,6 +4,9 @@ import com.mr.bj.Comment;
 import com.mr.bj.Order;
 import com.mr.bj.OrderInfo;
 import com.mr.comment.service.CommentService;
+import com.mr.utils.DataVo;
+import com.mr.utils.Page;
+import com.mr.utils.ResultVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -22,15 +25,29 @@ public class CommentController {
     private CommentService commentService;
 
     @RequestMapping("goToComment")
-    @ApiOperation(value = "查询个人评价列表")
+    @ApiOperation(value = "前台查询个人评价列表")
     @ApiImplicitParam(paramType = "query",name = "userId",value = "用户id",required = false,dataType = "int",defaultValue = "null")
     public List<Comment> goToComment(@RequestBody Integer userId){return commentService.queryComment(userId);}
 
+    @RequestMapping("delOrder")
+    @ApiOperation(value = "删除评论")
+    @ApiImplicitParam(paramType = "delete",name = "evaluatesId",value = "评论id",required = false,dataType = "int",defaultValue = "null")
+    public ResultVo delOrder(@RequestBody Integer evaluatesId){
+        return commentService.delOrder(evaluatesId);
+    }
+
     @RequestMapping("goToOrder")
-    @ApiOperation(value = "查询订单列表")
+    @ApiOperation(value = "前台查询订单列表")
     @ApiImplicitParam(paramType = "query",name = "userId",value = "用户id",required = false,dataType = "int",defaultValue = "null")
     public List<Order> goToOrder(@RequestBody Integer userId){
         return commentService.queryOrder(userId);
+    }
+
+    @RequestMapping("goToOrderList")
+    @ApiOperation(value = "后台查询订单列表")
+    @ApiImplicitParam(paramType = "query",name = "orderId",value = "订单id",required = false,dataType = "int",defaultValue = "null")
+    public DataVo goToOrderList(@RequestBody Page page){
+        return commentService.queryOrderList(page);
     }
 
     @RequestMapping("goToOrderinfo")
@@ -43,8 +60,8 @@ public class CommentController {
     @RequestMapping("orderDel")
     @ApiOperation(value = "删除订单")
     @ApiImplicitParam(paramType = "delete",name = "orderId",value = "订单id",required = false,dataType = "int",defaultValue = "null")
-    public void orderDel(@RequestBody Integer orderId){
-        commentService.orderDel(orderId);
+    public ResultVo orderDel(@RequestBody Integer orderId){
+        return commentService.orderDel(orderId);
     }
 
     /**

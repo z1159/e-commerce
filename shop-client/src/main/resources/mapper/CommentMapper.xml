@@ -27,7 +27,7 @@
         SELECT * FROM t_order WHERE order_id = #{orderId}
     </select>
     <delete id="orderDel">
-        DELETE * FROM t_order WHERE order_id = #{orderId}
+        DELETE FROM t_order WHERE order_id = #{orderId}
     </delete>
     <update id="orderUpdate1">
         UPDATE t_order SET order_type = 1 WHERE order_id = #{orderId}
@@ -56,5 +56,11 @@
     <select id="queryOrder4" resultType="com.mr.bj.Order" parameterType="Integer">
         SELECT * FROM t_commodity AS c, t_order AS o, t_img AS g
         WHERE o.user_id = #{userId} AND order_type = 4
+    </select>
+    <delete id="delOrder" parameterType="int">
+        DELETE FROM t_evaluates WHERE evaluates_id = #{evaluatesId}
+    </delete>
+    <select id="queryOrdereList" resultType="com.mr.bj.Order">
+        SELECT * FROM t_order
     </select>
 </mapper>
