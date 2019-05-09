@@ -31,4 +31,7 @@ public interface UserService {
 
     @RequestMapping(value = "/login/qianLoginUser",method = RequestMethod.POST)
     ResultVo qianLoginUser(@RequestBody User user);
+
+    @RequestMapping(value = "/login/userByName",method = RequestMethod.GET)
+    ResultVo userByName(@RequestParam("userName")  String userName);
 }

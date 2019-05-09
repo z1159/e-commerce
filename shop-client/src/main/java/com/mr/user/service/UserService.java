@@ -18,4 +18,6 @@ public interface UserService {
     List<User> queryUserList();
 
     ResultVo qianLoginUser(User user);
+
+    ResultVo userByName(String userName);
 }

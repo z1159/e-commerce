@@ -103,7 +103,8 @@
                 dataType:"json",
                 success:function(data){
                     if(data.code==200){
-                     $("#msg").html("<font color='green'>"+data.msg+"</font>");
+//                     $("#msg").html("<font color='green'>"+data.msg+"</font>");
+						alert("登录成功，跳转前台主页面")
                         window.location = "toQianIndex";
                     }else if (data.code == 500){
                       alert("用户名或密码错误，请重试");
