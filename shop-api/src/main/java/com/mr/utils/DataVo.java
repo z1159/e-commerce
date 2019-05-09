@@ -4,7 +4,8 @@ package com.mr.utils;
  * Created by asus on 2019/4/8.
  */
 public class DataVo<T> {
-    private Integer code;
+
+    private Integer code = 0;
 
     private String msg;
 

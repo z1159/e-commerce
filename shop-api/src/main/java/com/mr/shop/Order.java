@@ -1,8 +1,10 @@
 package com.mr.shop;
 
+import com.mr.utils.Page;
 import java.util.Date;
 
-public class Order {
+
+public class Order extends Page{
     private Integer orderId;
 
     private Integer userId;
