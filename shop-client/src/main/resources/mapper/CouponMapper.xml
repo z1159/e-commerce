@@ -15,6 +15,13 @@
             coupon_Id = #{couponId,jdbcType=INTEGER}
     </select>
 
+    <select id="openQtCoupon"  resultType="com.mr.shop.ComCoupon" parameterType="java.lang.Integer">
+        select cp.coupon_Id,cp.user_Id,cp.order_Id,cp.coupon_Times,cp.coupon_Timee,cp.coupon_Timey,cp.coupon_State,t.cp_Meet,t.cp_Subtract
+        from com_coupon cp LEFT JOIN t_coupon t on cp.coupon_id = t.coupon_id
+        WHERE
+        user_Id =  #{userId,jdbcType=INTEGER}
+    </select>
+
     <insert id="insertCoupon" parameterType="com.mr.shop.Coupon">
         insert into t_coupon
         <trim prefix="(" suffix=")" suffixOverrides=",">

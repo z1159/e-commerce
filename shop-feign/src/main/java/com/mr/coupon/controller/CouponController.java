@@ -1,7 +1,9 @@
 package com.mr.coupon.controller;
 
 import com.mr.coupon.service.CouponService;
+import com.mr.shop.ComCoupon;
 import com.mr.shop.Coupon;
+import com.mr.shop.User;
 import com.mr.utils.DataVo;
 import com.mr.utils.Page;
 import com.mr.utils.ResultVo;
@@ -11,6 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by z1159 on 2019/5/7.
@@ -40,6 +45,18 @@ public class CouponController {
 
         return mv;
     }
+
+    //打开优惠券列表查询页(根据状态查询)
+//    @RequestMapping("queryCouponListByState")
+//    @ResponseBody
+//    public DataVo queryCouponListByState(Integer couponState){
+//        DataVo dataVo = couponService.queryCouponListByState(couponState);
+//        mv.addObject("list",couponList);
+//        mv.setViewName("/zcf/ht/coupon-list");
+//
+//        return mv;
+//    }
+
     //打开新增页
     @RequestMapping("openCouponAdd")
     public ModelAndView openCouponAdd(){
@@ -75,4 +92,12 @@ public class CouponController {
         return mv;
     }
 
+    @RequestMapping("openQtCoupon")
+    public ModelAndView openQtCoupon(){
+        ModelAndView mv = new ModelAndView();
+        List<ComCoupon> comCouponList = couponService.openQtCoupon();
+        mv.addObject("list",comCouponList);
+        mv.setViewName("/zcf/qt/coupon");
+        return mv;
+    }
 }

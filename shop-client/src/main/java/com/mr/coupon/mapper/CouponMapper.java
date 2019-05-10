@@ -1,5 +1,6 @@
 package com.mr.coupon.mapper;
 
+import com.mr.shop.ComCoupon;
 import com.mr.shop.Coupon;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
@@ -21,4 +22,6 @@ public interface CouponMapper {
     void deleteCoupon(Integer couponId);
 
     Coupon selectByCouponId(Integer couponId);
+
+    List<ComCoupon> openQtCoupon(Integer userId);
 }

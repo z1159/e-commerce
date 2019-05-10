@@ -34,4 +34,8 @@ public interface CommentMapper {
     List<Order> queryOrder3(Integer userId);
 
     List<Order> queryOrder4(Integer userId);
+
+    int delOrder(Integer evaluatesId);
+
+    List<Order> queryOrdereList();
 }

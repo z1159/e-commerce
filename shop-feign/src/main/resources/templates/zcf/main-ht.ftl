@@ -47,7 +47,7 @@
                 <dl class="layui-nav-child">
                     <dd>
                         <#--<a href="">会员管理</a>-->
-                        <a href="#" data-url="userPage" data-title="会员管理" data-id="11" class="site-demo-active" data-type="tabAdd">会员管理</a>
+                        <a href="#" data-url="/toQueryList" data-title="会员管理" data-id="11" class="site-demo-active" data-type="tabAdd">会员管理</a>
                     </dd>
                     <dd>
                         <#--<a href="">收货地址</a>-->
@@ -89,7 +89,7 @@
                     </dd>
                     <dd>
                         <#--<a href="">订单管理</a>-->
-                        <a href="#" data-url="orderPage" data-title="订单管理" data-id="24" class="site-demo-active" data-type="tabAdd">订单管理</a>
+                        <a href="#" data-url="/commentController/goTo" data-title="订单管理" data-id="24" class="site-demo-active" data-type="tabAdd">订单管理</a>
                     </dd>
                     <dd>
                         <#--<a href="">通用问题</a>-->

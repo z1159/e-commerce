@@ -1,5 +1,6 @@
 package com.mr.coupon.service;
 
+import com.mr.shop.ComCoupon;
 import com.mr.shop.Coupon;
 import com.mr.utils.DataVo;
 import com.mr.utils.Page;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 /**
  * Created by z1159 on 2019/5/7.
@@ -29,4 +32,12 @@ public interface CouponService {
 
     @RequestMapping(value="/coupon/selectByCouponId",method = RequestMethod.GET)
     Coupon selectByCouponId(@RequestParam("couponId")Integer couponId);
+
+    @RequestMapping(value="/coupon/openQtCoupon",method = RequestMethod.GET)
+    List<ComCoupon> openQtCoupon();
+
+    @RequestMapping(value="/coupon/queryCouponListByState",method = RequestMethod.GET)
+    List<Coupon> queryCouponListByState(@RequestParam("couponState") Integer couponState);
+
+
 }

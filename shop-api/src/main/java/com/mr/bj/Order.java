@@ -3,11 +3,12 @@ package com.mr.bj;
 import com.mr.utils.Page;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 //订单管理实体
 @Data
-public class Order extends Page{
+public class Order implements Serializable {
     //用户编号
     private Integer userId;
 
@@ -40,5 +41,9 @@ public class Order extends Page{
 
     //成交时间
     private Date orderTime;
+
+    private Integer commId;
+
+    private String orderPaytype;
 
 }
