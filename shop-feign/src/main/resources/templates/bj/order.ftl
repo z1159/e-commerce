@@ -1186,7 +1186,7 @@
                                                         </div>
                                                     </li>
                                                     <li class="td td-change">
-                                                        <a href="commentlist.html">
+                                                        <a href="toQianEval">
                                                             <div class="am-btn am-btn-danger anniu">
                                                                 评价商品</div>
                                                         </a>
